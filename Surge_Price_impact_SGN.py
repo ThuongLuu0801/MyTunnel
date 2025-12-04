@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from dash import Dash, dcc, html, Input, Output
 import plotly.graph_objects as go
+import os
 # from pyngrok import ngrok
 # ngrok.set_auth_token("36Km6IAoX1cnWOIwnDWnvq7HUWS_3ifpQBuUCk9P3tgAZsMhY")
 # -------------------------------
@@ -463,4 +464,5 @@ def update_hourly_scatter(clickData, service_type, service_id, district, period)
 # print("Public URL:", public_url)
 # app.run(host="0.0.0.0", port=8050)
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8050)
+    port = int(os.environ.get("PORT", 8050))  # Render sẽ cung cấp PORT
+    app.run(host="0.0.0.0", port=port, debug=True)
