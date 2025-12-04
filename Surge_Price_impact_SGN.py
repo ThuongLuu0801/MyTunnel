@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 from dash import Dash, dcc, html, Input, Output
 import plotly.graph_objects as go
-from pyngrok import ngrok
-ngrok.set_auth_token("36Km6IAoX1cnWOIwnDWnvq7HUWS_3ifpQBuUCk9P3tgAZsMhY")
+# from pyngrok import ngrok
+# ngrok.set_auth_token("36Km6IAoX1cnWOIwnDWnvq7HUWS_3ifpQBuUCk9P3tgAZsMhY")
 # -------------------------------
 # 1. Load dữ liệu Excel
 # -------------------------------
@@ -459,6 +459,8 @@ def update_hourly_scatter(clickData, service_type, service_id, district, period)
 # =========================================
 # if __name__ == "__main__":
 #     app.run(debug=True)
-public_url = ngrok.connect(8050)
-print("Public URL:", public_url)
-app.run(host="0.0.0.0", port=8050)
+# public_url = ngrok.connect(8050)
+# print("Public URL:", public_url)
+# app.run(host="0.0.0.0", port=8050)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8050)
